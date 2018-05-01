@@ -7,7 +7,8 @@ import {
   Text,
   Image,
   TouchableOpacity,
-  AsyncStorage
+  AsyncStorage,
+  Platform
 } from "react-native";
 import { Constants } from "expo";
 import { Ionicons } from "@expo/vector-icons";
@@ -142,9 +143,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#eee"
   },
   headerTitle: {
-    fontFamily: "Avenir",
+    fontFamily: Platform.OS === "ios" ? "Avenir" : "Roboto",
     fontSize: 18
   },
   myFavoriteButton: {},
-  myFavoriteButtonText: {}
+  myFavoriteButtonText: {
+    fontSize: 18,
+    fontFamily: Platform.OS === "ios" ? "Avenir" : "Roboto",
+  }
 });

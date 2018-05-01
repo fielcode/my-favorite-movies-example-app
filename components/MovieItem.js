@@ -5,7 +5,8 @@ import {
   Text,
   TouchableOpacity,
   StyleSheet,
-  Dimensions
+  Dimensions,
+  Platform
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   movieTitle: {
-    fontFamily: "Avenir",
+    fontFamily: Platform.OS === "ios" ? "Avenir" : "Roboto",
     fontSize: 14
   },
   movieFavoriteButtonContainer: {},
