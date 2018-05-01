@@ -35,7 +35,14 @@ export default class App extends React.Component {
 
   fetchMovies = async () => {
     const currentYear = new Date().getFullYear();
-    const url = `https://api.themoviedb.org/3/discover/movie?primary_release_year=${currentYear}&page=1&include_video=false&include_adult=false&sort_by=popularity.desc&language=pt-BR&api_key=95af1e4cfe2cfa63a452d0a8545ff5a2`;
+    const url = "https://api.themoviedb.org/3/discover/movie"
+                  + `?primary_release_year=${currentYear}`
+                  + "&page=1"
+                  + "&include_video=false"
+                  + "&include_adult=false"
+                  + "&sort_by=popularity.desc"
+                  + "&language=pt-BR"
+                  + "&api_key=95af1e4cfe2cfa63a452d0a8545ff5a2";
     const movieCall = await fetch(url);
     const response = await movieCall.json();
 
